@@ -1,52 +1,124 @@
 * {
-  box-sizing: border-box;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  padding: 0;
   margin: 0;
-  padding: 2rem;
-  font-family: $font-family-sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  background-color: $uoc-bg;
-  color: $uoc-corporate;
 }
 
-.uoc-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 2rem;
-  text-align: center;
-  background-color: #fff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-.uoc-logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-  max-width: 200px;
-  height: auto;
-
-  @media (min-width: $mqMinWidth) {
-    max-width: none;
+#header {
+  @media (min-width: $minWidthDesktop) {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    padding-top: 20px;
+    background-color: $colorMenu;
+  }
+  @media (max-width: $minWidthDesktop) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: $colorMenu;
   }
 }
 
-.uoc-title {
-  font-family: $font-family-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: $uoc-corporate;
+.links {
+  @media (max-width: $minWidthDesktop) {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(var(--items), 1fr);
+  }
 
-  @media (min-width: $mqMinWidth) {
-    font-size: 36px;
+  a {
+    font-family: $font-family-sans-serif;
+    color: $colorLinks;
+    @media (min-width: $minWidthDesktop) {
+      display: block;
+      padding: 20px 8px 6px 30px;
+      font-size: 25px;
+      text-decoration: none;
+    }
+    @media (max-width: $minWidthDesktop) {
+      padding: .75em;
+      text-align: center;
+      text-decoration: none;
+      transition: all .5s;
+    }
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+i + br {
+  @media (min-width: $minWidthDesktop) {
+    display: none; 
+  }
+}
+
+.content {
+  font-family: $font-family-sans-serif;
+  @media (min-width: $minWidthDesktop) {
+    padding: 20px 50px;
+    margin-left: 250px; /* Same as the width of the header */
+    font-size: 28px;
+  }
+  @media (max-width: $minWidthDesktop) {
+    margin: 80px 20px 0px;
+  }
+
+  figure {
+    display: flex;
+    flex-flow: column;
+    max-width: 500px;
+    padding: 5px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: thin $colorRequadre solid;
+  }
+
+  figcaption {
+    padding: 3px;
+    font-family: $font-family-sans-serif;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: $colorMenu;
+  }
+
+  picture img {
+    width: 100%;
+    height: auto;
+    padding-top: 20px;
+  }
+
+  h1 {
+    @media (min-width: $minWidthDesktop) {
+      padding-bottom: 50px;
+      font-size: 54px;
+    }
+    @media (max-width: $minWidthDesktop) {
+      padding-bottom: 20px;
+      font-size: 28px;
+    }
+  }
+  
+  h2 {
+    margin-bottom: 1.5vh;
+  }
+  
+  p, ul {
+    @media (min-width: $minWidthDesktop) {
+      font-size: 22px;
+    }
+    @media (max-width: $minWidthDesktop) {
+      font-size: 16px;
+    }
+  }
+  
+  hr {
+    margin-top: 40px;
+    margin-bottom: 20px;
   }
 }
 
